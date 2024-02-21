@@ -18,13 +18,12 @@ export const App = ({ offer }: IAppScreenProps): JSX.Element => (
       <Routes>
         <Route path={AppRoute.MainPage} element={<MainPage offer={offer} />} />
         <Route path={AppRoute.OfferPage} element={<OfferPage />} />
-        <Route path={AppRoute.FavoritesPage} element={<FavoritesPage />} />
         <Route path={AppRoute.LoginPage} element={<LoginPage />} />
         <Route
           path={AppRoute.FavoritesPage}
           element={
             <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <LoginPage />
+              <FavoritesPage />
             </PrivateRoute>
           }
         />

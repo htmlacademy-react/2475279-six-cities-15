@@ -1,7 +1,10 @@
 import Header from '../../components/header/header';
+import PageTitle from '../../components/page-title/page-title';
 
 const FavoritesPage = (): JSX.Element => (
   <div className="page">
+    <PageTitle title="Favorite" />
+
     <Header />
 
     <main className="page__main page__main--favorites">
