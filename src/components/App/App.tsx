@@ -4,10 +4,8 @@ interface IAppScreenProps {
   offer: number;
 }
 
-const App = ({ offer }: IAppScreenProps): JSX.Element => (
+export const App = ({ offer }: IAppScreenProps): JSX.Element => (
   <div>
     <Main offer={offer} />
   </div>
 );
-
-export default App;
