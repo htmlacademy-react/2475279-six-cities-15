@@ -1,4 +1,4 @@
-import Main from '../../pages/main-page/main-page';
+import Main from './pages/main-page/main-page';
 
 interface IAppScreenProps {
   offer: number;
