@@ -1,12 +1,12 @@
-import Main from '../../pages/Main';
+import Main from '../../pages/main-page/main-page';
 
 interface IAppScreenProps {
-  offers: number;
+  offer: number;
 }
 
-const App = ({ offers }: IAppScreenProps): JSX.Element => (
+const App = ({ offer }: IAppScreenProps): JSX.Element => (
   <div>
-    <Main offers={offers} />
+    <Main offer={offer} />
   </div>
 );
 

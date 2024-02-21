@@ -1,6 +1,6 @@
-import { cardInfo } from './mockData';
+import { cardInfo } from '../../mocks/mocks';
 
-const Card = () => (
+const Card = (): JSX.Element => (
   <div className="cities__places-list places__list tabs__content">
     {cardInfo.map(({ id, premium, imgSrc, cost, description, type }) => (
       <article className="cities__card place-card" key={id}>

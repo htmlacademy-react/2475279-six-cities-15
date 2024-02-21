@@ -4,7 +4,7 @@ interface ICardInfo {
   imgSrc: string;
   cost: number;
   description: string;
-  type: string;
+  type: 'Apartment' | 'Room' | 'House' | 'Hotel';
 }
 
 export const cardInfo: ICardInfo[] = [
@@ -47,5 +47,37 @@ export const cardInfo: ICardInfo[] = [
     cost: 80,
     description: 'Wood and stone place',
     type: 'Room',
+  },
+];
+
+interface IOfferImg {
+  id: number;
+  imgSrc: string;
+}
+
+export const offerImg: IOfferImg[] = [
+  {
+    id: 1,
+    imgSrc: 'img/room.jpg',
+  },
+  {
+    id: 2,
+    imgSrc: 'img/apartment-01.jpg',
+  },
+  {
+    id: 3,
+    imgSrc: 'img/apartment-02.jpg',
+  },
+  {
+    id: 4,
+    imgSrc: 'img/apartment-03.jpg',
+  },
+  {
+    id: 5,
+    imgSrc: 'img/studio-01.jpg',
+  },
+  {
+    id: 6,
+    imgSrc: 'img/room.jpg',
   },
 ];

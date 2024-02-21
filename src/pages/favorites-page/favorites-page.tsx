@@ -1,6 +1,6 @@
-import Header from '../../components/Header';
+import Header from '../../components/header/header';
 
-const Favorites = (): JSX.Element => (
+const FavoritesPage = (): JSX.Element => (
   <div className="page">
     <Header />
 
@@ -178,6 +178,7 @@ const Favorites = (): JSX.Element => (
         </section>
       </div>
     </main>
+
     <footer className="footer container">
       <a className="footer__logo-link" href="main.html">
         <img
@@ -192,4 +193,4 @@ const Favorites = (): JSX.Element => (
   </div>
 );
 
-export default Favorites;
+export default FavoritesPage;

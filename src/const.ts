@@ -1,3 +1,12 @@
 export const Settings = {
-  Offers: 132,
+  Offer: 132,
 } as const;
+
+export const CITIES: string[] = [
+  'Paris',
+  'Cologne',
+  'Brussels',
+  'Amsterdam',
+  'Hamburg',
+  'Dusseldorf',
+];
