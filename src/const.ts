@@ -10,3 +10,23 @@ export const CITIES: string[] = [
   'Hamburg',
   'Dusseldorf',
 ];
+
+export const OPTIONS: string[] = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first',
+];
+
+export enum AppRoute {
+  LoginPage = '/login',
+  MainPage = '/',
+  FavoritesPage = '/favorites',
+  OfferPage = '/offer/:id',
+}
+
+export enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}

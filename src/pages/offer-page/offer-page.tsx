@@ -3,6 +3,7 @@ import Header from '../../components/header/header';
 import { offerImg } from '../../mocks/mocks';
 import OfferInfo from './components/offer-info/offer-info';
 import OfferReview from './components/offer-review/offer-review';
+import Map from '../../components/map/map';
 
 const OfferPage = (): JSX.Element => (
   <div className="page">
@@ -28,7 +29,7 @@ const OfferPage = (): JSX.Element => (
           </div>
         </div>
 
-        <section className="offer__map map"></section>
+        <Map className="offer__map" />
       </section>
 
       <div className="container">
@@ -37,7 +38,7 @@ const OfferPage = (): JSX.Element => (
             Other places in the neighbourhood
           </h2>
           <div className="near-places__list places__list">
-            <Card />
+            <Card className="near-places" />
           </div>
         </section>
       </div>

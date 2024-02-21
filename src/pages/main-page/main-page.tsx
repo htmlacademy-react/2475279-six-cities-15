@@ -20,7 +20,7 @@ const MainPage = ({ offer }: IAppScreenProps): JSX.Element => (
         <div className="cities__places-container container">
           <section className="cities__places places">
             <SortPlaces offer={offer} />
-            <Card />
+            <Card className="cities" />
           </section>
 
           <div className="cities__right-section">
