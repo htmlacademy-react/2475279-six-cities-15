@@ -1,13 +1,8 @@
+import { OPTIONS } from '../../../../const';
+
 interface IAppScreenProps {
   offer: number;
 }
-
-const sortTypes: string[] = [
-  'Popular',
-  'Price: low to high',
-  'Price: high to low',
-  'Top rated first',
-];
 
 const SortPlaces = ({ offer }: IAppScreenProps): JSX.Element => (
   <div>
@@ -24,7 +19,7 @@ const SortPlaces = ({ offer }: IAppScreenProps): JSX.Element => (
       </span>
 
       <ul className="places__options places__options--custom places__options--opened">
-        {sortTypes.map((type) => (
+        {OPTIONS.map((type) => (
           <li className="places__option" key={type}>
             {type}
           </li>

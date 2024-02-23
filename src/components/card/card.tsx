@@ -1,9 +1,13 @@
 import { cardInfo } from '../../mocks/mocks';
 
-const Card = (): JSX.Element => (
+interface ICardProps {
+  className?: string;
+}
+
+const Card = ({ className }: ICardProps): JSX.Element => (
   <div className="cities__places-list places__list tabs__content">
     {cardInfo.map(({ id, premium, imgSrc, cost, description, type }) => (
-      <article className="cities__card place-card" key={id}>
+      <article className={`${className}__card place-card`} key={id}>
         {premium ? (
           <div className="place-card__mark">
             <span>Premium</span>
