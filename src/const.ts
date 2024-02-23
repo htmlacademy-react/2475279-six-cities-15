@@ -19,10 +19,10 @@ export const OPTIONS: string[] = [
 ];
 
 export enum AppRoute {
-  LoginPage = '/login',
-  MainPage = '/',
-  FavoritesPage = '/favorites',
-  OfferPage = '/offer/:id',
+  Root = '/',
+  Login = '/login',
+  Favorites = '/favorites',
+  Offer = '/offer/:id',
 }
 
 export enum AuthorizationStatus {

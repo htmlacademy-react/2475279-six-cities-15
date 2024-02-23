@@ -1,5 +1,4 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import { AppRoute, AuthorizationStatus } from './const';
 import MainPage from './pages/main-page/main-page';
 import NotFoundPage from './pages/not-found-page/not-found-page';
@@ -7,20 +6,21 @@ import OfferPage from './pages/offer-page/offer-page';
 import FavoritesPage from './pages/favorites-page/favorites-page';
 import LoginPage from './pages/login-page/login-page';
 import PrivateRoute from './components/private-route/private-route';
+import Layout from './components/layout/layout';
 
 interface IAppScreenProps {
   offer: number;
 }
 
 export const App = ({ offer }: IAppScreenProps): JSX.Element => (
-  <HelmetProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path={AppRoute.MainPage} element={<MainPage offer={offer} />} />
-        <Route path={AppRoute.OfferPage} element={<OfferPage />} />
-        <Route path={AppRoute.LoginPage} element={<LoginPage />} />
+  <BrowserRouter>
+    <Routes>
+      <Route path={AppRoute.Root} element={<Layout />}>
+        <Route index element={<MainPage offer={offer} />} />
+        <Route path={AppRoute.Offer} element={<OfferPage />} />
+        <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route
-          path={AppRoute.FavoritesPage}
+          path={AppRoute.Favorites}
           element={
             <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
               <FavoritesPage />
@@ -28,7 +28,7 @@ export const App = ({ offer }: IAppScreenProps): JSX.Element => (
           }
         />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
-  </HelmetProvider>
+      </Route>
+    </Routes>
+  </BrowserRouter>
 );
