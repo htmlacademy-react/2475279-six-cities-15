@@ -3,12 +3,14 @@ import OfferInfo from './components/offer-info/offer-info';
 import OfferReview from './components/offer-review/offer-review';
 import Map from '../../components/map/map';
 import { IOffer } from '../../mocks/offers';
+import { IReviews } from '../../mocks/reviews';
 
 interface IOfferPageProps {
   offers: IOffer[];
+  reviews: IReviews[];
 }
 
-const OfferPage = ({ offers }: IOfferPageProps): JSX.Element => (
+const OfferPage = ({ offers, reviews }: IOfferPageProps): JSX.Element => (
   <main className="page__main page__main--offer">
     <section className="offer">
       <div className="offer__gallery-container container">
@@ -27,9 +29,9 @@ const OfferPage = ({ offers }: IOfferPageProps): JSX.Element => (
 
       <div className="offer__container container">
         <div className="offer__wrapper">
-          <OfferInfo />
+          <OfferInfo offers={offers} />
 
-          <OfferReview />
+          <OfferReview reviews={reviews} />
         </div>
       </div>
 

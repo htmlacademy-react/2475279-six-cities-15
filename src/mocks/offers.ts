@@ -44,9 +44,20 @@ export const offers: IOffer[] = [
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     bedrooms: 2,
-    goods: ['Wi-fi'],
+    goods: [
+      'Wi-fi',
+      'Washing machine',
+      'Towels',
+      'Heating',
+      'Coffee machine',
+      'Baby seat',
+      'Kitchen',
+      'Dishwasher',
+      'Cabel TV',
+      'Fridge',
+    ],
     host: {
-      name: 'Oliver',
+      name: 'Angelina',
       avatarUrl: 'img/avatar-max.jpg',
       isPro: true,
       comment:
@@ -75,7 +86,18 @@ export const offers: IOffer[] = [
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     bedrooms: 2,
-    goods: ['Wi-fi'],
+    goods: [
+      'Wi-fi',
+      'Washing machine',
+      'Towels',
+      'Heating',
+      'Coffee machine',
+      'Baby seat',
+      'Kitchen',
+      'Dishwasher',
+      'Cabel TV',
+      'Fridge',
+    ],
     host: {
       name: 'Oliver',
       avatarUrl: 'img/avatar-max.jpg',
@@ -106,7 +128,18 @@ export const offers: IOffer[] = [
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     bedrooms: 2,
-    goods: ['Wi-fi'],
+    goods: [
+      'Wi-fi',
+      'Washing machine',
+      'Towels',
+      'Heating',
+      'Coffee machine',
+      'Baby seat',
+      'Kitchen',
+      'Dishwasher',
+      'Cabel TV',
+      'Fridge',
+    ],
     host: {
       name: 'Oliver',
       avatarUrl: 'img/avatar-max.jpg',
@@ -137,7 +170,18 @@ export const offers: IOffer[] = [
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     bedrooms: 2,
-    goods: ['Wi-fi'],
+    goods: [
+      'Wi-fi',
+      'Washing machine',
+      'Towels',
+      'Heating',
+      'Coffee machine',
+      'Baby seat',
+      'Kitchen',
+      'Dishwasher',
+      'Cabel TV',
+      'Fridge',
+    ],
     host: {
       name: 'Oliver',
       avatarUrl: 'img/avatar-max.jpg',
@@ -168,7 +212,18 @@ export const offers: IOffer[] = [
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
     bedrooms: 2,
-    goods: ['Wi-fi'],
+    goods: [
+      'Wi-fi',
+      'Washing machine',
+      'Towels',
+      'Heating',
+      'Coffee machine',
+      'Baby seat',
+      'Kitchen',
+      'Dishwasher',
+      'Cabel TV',
+      'Fridge',
+    ],
     host: {
       name: 'Oliver',
       avatarUrl: 'img/avatar-max.jpg',

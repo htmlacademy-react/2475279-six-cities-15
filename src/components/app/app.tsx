@@ -1,21 +1,27 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import MainPage from './pages/main-page/main-page';
-import NotFoundPage from './pages/not-found-page/not-found-page';
-import OfferPage from './pages/offer-page/offer-page';
-import FavoritesPage from './pages/favorites-page/favorites-page';
-import LoginPage from './pages/login-page/login-page';
-import PrivateRoute from './components/private-route/private-route';
-import Layout from './components/layout/layout';
-import { AppRoute } from './const';
-import { getAuthorizationStatus } from './authorizationStatus';
-import { IOffer } from './mocks/offers';
+import MainPage from '../../pages/main-page/main-page';
+import NotFoundPage from '../../pages/not-found-page/not-found-page';
+import OfferPage from '../../pages/offer-page/offer-page';
+import FavoritesPage from '../../pages/favorites-page/favorites-page';
+import LoginPage from '../../pages/login-page/login-page';
+import PrivateRoute from '../private-route/private-route';
+import Layout from '../layout/layout';
+import { AppRoute } from '../../const';
+import { getAuthorizationStatus } from '../../authorizationStatus';
+import { IOffer } from '../../mocks/offers';
+import { IReviews } from '../../mocks/reviews';
 
 interface IAppProps {
   offerCount: number;
   offers: IOffer[];
+  reviews: IReviews[];
 }
 
-export const App = ({ offerCount, offers }: IAppProps): JSX.Element => {
+export const App = ({
+  offerCount,
+  offers,
+  reviews,
+}: IAppProps): JSX.Element => {
   const authorizationStatus = getAuthorizationStatus();
 
   return (
@@ -28,7 +34,7 @@ export const App = ({ offerCount, offers }: IAppProps): JSX.Element => {
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferPage offers={offers} />}
+            element={<OfferPage offers={offers} reviews={reviews} />}
           />
           <Route
             path={AppRoute.Login}
