@@ -1,4 +1,4 @@
-import Card from '../../components/card/card';
+import CardList from '../../components/card-list/card-list';
 import OfferInfo from './components/offer-info/offer-info';
 import OfferReview from './components/offer-review/offer-review';
 import Map from '../../components/map/map';
@@ -44,7 +44,7 @@ const OfferPage = ({ offers, reviews }: IOfferPageProps): JSX.Element => (
           Other places in the neighbourhood
         </h2>
         <div className="near-places__list places__list">
-          <Card offers={offers} className="near-places" />
+          <CardList offers={offers} className="near-places" />
         </div>
       </section>
     </div>

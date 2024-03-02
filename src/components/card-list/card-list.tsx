@@ -5,7 +5,7 @@ interface ICardProps {
   offers: IOffer[];
 }
 
-const Card = ({ className, offers }: ICardProps): JSX.Element => (
+const CardList = ({ className, offers }: ICardProps): JSX.Element => (
   <div className="cities__places-list places__list tabs__content">
     {offers.map(({ id, isPremium, images, price, title, type }) => (
       <article className={`${className}__card place-card`} key={id}>
@@ -62,4 +62,4 @@ const Card = ({ className, offers }: ICardProps): JSX.Element => (
   </div>
 );
 
-export default Card;
+export default CardList;

@@ -1,4 +1,4 @@
-import Card from '../../components/card/card';
+import CardList from '../../components/card-list/card-list';
 import Map from '../../components/map/map';
 import NavTabs from './components/nav-tabs/nav-tabs';
 import SortPlaces from './components/sort-places/sort-places';
@@ -18,7 +18,7 @@ const MainPage = ({ offerCount, offers }: IMainPageProps): JSX.Element => (
       <div className="cities__places-container container">
         <section className="cities__places places">
           <SortPlaces offerCount={offerCount} />
-          <Card className="cities" offers={offers} />
+          <CardList className="cities" offers={offers} />
         </section>
 
         <div className="cities__right-section">

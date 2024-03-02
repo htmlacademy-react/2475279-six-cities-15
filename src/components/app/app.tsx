@@ -10,17 +10,20 @@ import { AppRoute } from '../../const';
 import { getAuthorizationStatus } from '../../authorizationStatus';
 import { IOffer } from '../../mocks/offers';
 import { IReviews } from '../../mocks/reviews';
+import { IFavorite } from '../../mocks/favorites';
 
 interface IAppProps {
   offerCount: number;
   offers: IOffer[];
   reviews: IReviews[];
+  favorites: IFavorite[];
 }
 
 export const App = ({
   offerCount,
   offers,
   reviews,
+  favorites,
 }: IAppProps): JSX.Element => {
   const authorizationStatus = getAuthorizationStatus();
 
@@ -48,7 +51,7 @@ export const App = ({
             path={AppRoute.Favorites}
             element={
               <PrivateRoute authorizationStatus={authorizationStatus}>
-                <FavoritesPage />
+                <FavoritesPage favorites={favorites} />
               </PrivateRoute>
             }
           />
