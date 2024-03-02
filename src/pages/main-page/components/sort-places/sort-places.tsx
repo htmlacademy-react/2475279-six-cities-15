@@ -1,13 +1,13 @@
 import { OPTIONS } from '../../../../const';
 
 interface IAppScreenProps {
-  offer: number;
+  offerCount: number;
 }
 
-const SortPlaces = ({ offer }: IAppScreenProps): JSX.Element => (
+const SortPlaces = ({ offerCount }: IAppScreenProps): JSX.Element => (
   <div>
     <h2 className="visually-hidden">Places</h2>
-    <b className="places__found">{offer} places to stay in Amsterdam</b>
+    <b className="places__found">{offerCount} places to stay in Amsterdam</b>
 
     <form className="places__sorting" action="#" method="get">
       <span className="places__sorting-caption">Sort by</span>

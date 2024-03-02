@@ -1,14 +1,15 @@
-import { cardInfo } from '../../mocks/mocks';
+import { IOffer } from '../../mocks/offers';
 
 interface ICardProps {
   className?: string;
+  offers: IOffer[];
 }
 
-const Card = ({ className }: ICardProps): JSX.Element => (
+const Card = ({ className, offers }: ICardProps): JSX.Element => (
   <div className="cities__places-list places__list tabs__content">
-    {cardInfo.map(({ id, premium, imgSrc, cost, description, type }) => (
+    {offers.map(({ id, isPremium, images, price, title, type }) => (
       <article className={`${className}__card place-card`} key={id}>
-        {premium ? (
+        {isPremium ? (
           <div className="place-card__mark">
             <span>Premium</span>
           </div>
@@ -18,7 +19,7 @@ const Card = ({ className }: ICardProps): JSX.Element => (
           <a href="#">
             <img
               className="place-card__image"
-              src={imgSrc}
+              src={images[0]}
               width="260"
               height="200"
               alt="Place image"
@@ -29,7 +30,7 @@ const Card = ({ className }: ICardProps): JSX.Element => (
         <div className="place-card__info">
           <div className="place-card__price-wrapper">
             <div className="place-card__price">
-              <b className="place-card__price-value">&euro;{cost}</b>
+              <b className="place-card__price-value">&euro;{price}</b>
               <span className="place-card__price-text">&#47;&nbsp;night</span>
             </div>
             <button
@@ -51,7 +52,7 @@ const Card = ({ className }: ICardProps): JSX.Element => (
           </div>
 
           <h2 className="place-card__name">
-            <a href="#">{description}</a>
+            <a href="#">{title}</a>
           </h2>
 
           <p className="place-card__type">{type}</p>

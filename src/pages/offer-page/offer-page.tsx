@@ -2,16 +2,24 @@ import Card from '../../components/card/card';
 import OfferInfo from './components/offer-info/offer-info';
 import OfferReview from './components/offer-review/offer-review';
 import Map from '../../components/map/map';
-import { offerImg } from '../../mocks/mocks';
+import { IOffer } from '../../mocks/offers';
 
-const OfferPage = (): JSX.Element => (
+interface IOfferPageProps {
+  offers: IOffer[];
+}
+
+const OfferPage = ({ offers }: IOfferPageProps): JSX.Element => (
   <main className="page__main page__main--offer">
     <section className="offer">
       <div className="offer__gallery-container container">
         <div className="offer__gallery">
-          {offerImg.map(({ id, imgSrc }) => (
+          {offers.map(({ id, images }) => (
             <div className="offer__image-wrapper" key={id}>
-              <img className="offer__image" src={imgSrc} alt="Photo studio" />
+              <img
+                className="offer__image"
+                src={images[0]}
+                alt="Photo studio"
+              />
             </div>
           ))}
         </div>
@@ -34,7 +42,7 @@ const OfferPage = (): JSX.Element => (
           Other places in the neighbourhood
         </h2>
         <div className="near-places__list places__list">
-          <Card className="near-places" />
+          <Card offers={offers} className="near-places" />
         </div>
       </section>
     </div>

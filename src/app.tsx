@@ -8,20 +8,28 @@ import PrivateRoute from './components/private-route/private-route';
 import Layout from './components/layout/layout';
 import { AppRoute } from './const';
 import { getAuthorizationStatus } from './authorizationStatus';
+import { IOffer } from './mocks/offers';
 
-interface IAppScreenProps {
-  offer: number;
+interface IAppProps {
+  offerCount: number;
+  offers: IOffer[];
 }
 
-export const App = ({ offer }: IAppScreenProps): JSX.Element => {
+export const App = ({ offerCount, offers }: IAppProps): JSX.Element => {
   const authorizationStatus = getAuthorizationStatus();
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path={AppRoute.Root} element={<Layout />}>
-          <Route index element={<MainPage offer={offer} />} />
-          <Route path={AppRoute.Offer} element={<OfferPage />} />
+          <Route
+            index
+            element={<MainPage offerCount={offerCount} offers={offers} />}
+          />
+          <Route
+            path={AppRoute.Offer}
+            element={<OfferPage offers={offers} />}
+          />
           <Route
             path={AppRoute.Login}
             element={
