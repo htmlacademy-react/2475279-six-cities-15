@@ -183,7 +183,7 @@ export const offers: IOffer[] = [
     rating: 4,
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 2,
+    bedrooms: 4,
     goods: [
       'Wi-fi',
       'Washing machine',
@@ -236,7 +236,7 @@ export const offers: IOffer[] = [
     rating: 4,
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 4,
+    bedrooms: 5,
     goods: [
       'Wi-fi',
       'Washing machine',

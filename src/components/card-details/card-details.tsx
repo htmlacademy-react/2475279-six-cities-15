@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../../const';
 import { IOffer } from '../../types/offers';
 
 interface ICardDetailsProps {
@@ -24,13 +23,13 @@ const CardDetails = ({
   };
 
   return (
-    <article
-      className={`${className}__card place-card`}
-      key={id}
-      onMouseEnter={handleMouseOn}
-      onMouseLeave={handleMouseOff}
-    >
-      <Link to={`${AppRoute.Offer}/${offer.id}`}>
+    <Link to={`/offer/${id}`}>
+      <article
+        className={`${className}__card place-card`}
+        key={id}
+        onMouseEnter={handleMouseOn}
+        onMouseLeave={handleMouseOff}
+      >
         {isPremium ? (
           <div className="place-card__mark">
             <span>Premium</span>
@@ -75,8 +74,8 @@ const CardDetails = ({
 
           <p className="place-card__type">{type}</p>
         </div>
-      </Link>
-    </article>
+      </article>
+    </Link>
   );
 };
 

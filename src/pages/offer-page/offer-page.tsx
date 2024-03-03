@@ -1,11 +1,13 @@
+import { useParams } from 'react-router-dom';
 import CardsList from '../../components/cards-list/cards-list';
 import OfferInfo from './components/offer-info/offer-info';
 import OfferReview from './components/offer-review/offer-review';
 import NotFoundPage from '../not-found-page/not-found-page';
 import Map from '../../components/map/map';
+import { getAuthorizationStatus } from '../../authorizationStatus';
+import { AuthorizationStatus } from '../../const';
 import { IOffer } from '../../types/offers';
 import { IReviews } from '../../types/reviews';
-import { useParams } from 'react-router-dom';
 
 interface IOfferPageProps {
   offers: IOffer[];
@@ -13,10 +15,12 @@ interface IOfferPageProps {
 }
 
 const OfferPage = ({ offers, reviews }: IOfferPageProps): JSX.Element => {
-  const { idEvent } = useParams();
+  const { eventId } = useParams();
+
+  const authorizationStatus = getAuthorizationStatus();
 
   const currentOffer: IOffer | undefined = offers.find(
-    (offer: IOffer) => offer.id === idEvent
+    (offer: IOffer) => offer.id === eventId
   );
 
   if (!currentOffer) {
@@ -42,9 +46,12 @@ const OfferPage = ({ offers, reviews }: IOfferPageProps): JSX.Element => {
 
         <div className="offer__container container">
           <div className="offer__wrapper">
-            <OfferInfo offers={offers} />
+            <OfferInfo currentOffer={currentOffer} />
 
-            <OfferReview reviews={reviews} />
+            <OfferReview
+              reviews={reviews}
+              isAuth={authorizationStatus === AuthorizationStatus.Auth}
+            />
           </div>
         </div>
 
@@ -57,7 +64,10 @@ const OfferPage = ({ offers, reviews }: IOfferPageProps): JSX.Element => {
             Other places in the neighbourhood
           </h2>
           <div className="near-places__list places__list">
-            <CardsList offers={offers} className="near-places" />
+            <CardsList
+              offers={offers}
+              className="near-places__card place-card"
+            />
           </div>
         </section>
       </div>

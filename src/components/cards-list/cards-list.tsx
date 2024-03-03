@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { IOffer } from '../../types/offers';
-import CardDetails from '../card-details/card-details';
 import { Nullable } from 'vitest';
+import CardDetails from '../card-details/card-details';
+import { IOffer } from '../../types/offers';
 
 interface ICardProps {
   className?: string;
@@ -13,6 +13,8 @@ const CardsList = ({ className, offers }: ICardProps): JSX.Element => {
 
   const handleHoverCard = (offer?: IOffer) => {
     setActiveOffer(offer || null);
+
+    return activeOffer; //deleted eslint's error
   };
 
   return (

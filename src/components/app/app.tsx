@@ -36,7 +36,7 @@ export const App = ({
             element={<MainPage offerCount={offerCount} offers={offers} />}
           />
           <Route
-            path={`${AppRoute.Offer}/:id`}
+            path={AppRoute.Offer}
             element={<OfferPage offers={offers} reviews={reviews} />}
           />
           <Route

@@ -1,10 +1,10 @@
 import { IOffer } from '../../../../types/offers';
 
 interface IOfferInfoProps {
-  offers: IOffer[];
+  currentOffer: IOffer;
 }
 
-const OfferInfo = ({ offers }: IOfferInfoProps) => {
+const OfferInfo = ({ currentOffer }: IOfferInfoProps) => {
   const {
     isPremium,
     title,
@@ -15,7 +15,7 @@ const OfferInfo = ({ offers }: IOfferInfoProps) => {
     price,
     goods,
     host,
-  } = offers[0];
+  } = currentOffer;
 
   return (
     <>

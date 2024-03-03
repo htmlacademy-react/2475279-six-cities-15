@@ -1,5 +1,5 @@
 import { IFavorite } from '../../types/favorites';
-import FavoritesItem from './components/favorites-item';
+import FavoriteCard from './components/favorite-card';
 
 interface IFavoritesPageProps {
   favorites: IFavorite[];
@@ -12,7 +12,7 @@ const FavoritesPage = ({ favorites }: IFavoritesPageProps): JSX.Element => (
         <h1 className="favorites__title">Saved listing</h1>
         <ul className="favorites__list">
           {favorites.map((favorite) => (
-            <FavoritesItem favorite={favorite} key={favorite.id} />
+            <FavoriteCard favorite={favorite} key={favorite.id} />
           ))}
         </ul>
       </section>

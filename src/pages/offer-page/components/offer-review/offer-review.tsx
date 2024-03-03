@@ -3,9 +3,10 @@ import { IReviews } from '../../../../types/reviews';
 
 interface IOfferReviewProps {
   reviews: IReviews[];
+  isAuth: boolean;
 }
 
-const OfferReview = ({ reviews }: IOfferReviewProps) => {
+const OfferReview = ({ reviews, isAuth }: IOfferReviewProps) => {
   const { avatarUrl, name, comment, date } = reviews[0];
 
   return (
@@ -42,7 +43,7 @@ const OfferReview = ({ reviews }: IOfferReviewProps) => {
         </li>
       </ul>
 
-      <OfferForm />
+      {isAuth && <OfferForm />}
     </section>
   );
 };

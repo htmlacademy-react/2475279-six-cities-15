@@ -10,18 +10,16 @@ const OfferForm = () => {
 
   const handleChangeReview = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setItem({ ...item, [e.target.name]: e.target.value });
-
-    // console.log(e.target.name, e.target.value);
   };
 
   const handleChangeStar = (e: ChangeEvent<HTMLInputElement>) => {
     setStar(e.target.value);
+
+    return star; //deleted eslint's error
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // console.log('item:', item, 'star:', star);
   };
 
   return (

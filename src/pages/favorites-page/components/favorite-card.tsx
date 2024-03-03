@@ -1,10 +1,10 @@
 import { IFavorite } from '../../../types/favorites';
 
-interface IFavoritesItem {
+interface IFavoriteCard {
   favorite: IFavorite;
 }
 
-const FavoritesItem = ({ favorite }: IFavoritesItem) => {
+const FavoriteCard = ({ favorite }: IFavoriteCard) => {
   const { city, isPremium, images, price, title, type } = favorite;
 
   return (
@@ -73,4 +73,4 @@ const FavoritesItem = ({ favorite }: IFavoritesItem) => {
   );
 };
 
-export default FavoritesItem;
+export default FavoriteCard;
