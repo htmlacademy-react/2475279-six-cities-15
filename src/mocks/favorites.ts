@@ -1,34 +1,4 @@
-interface IHost {
-  name: string;
-  avatarUrl: string;
-  isPro: boolean;
-  comment: string;
-  rating: number;
-}
-
-export interface IFavorite {
-  id: number;
-  title: string;
-  type: 'Apartment' | 'Room' | 'House' | 'Hotel';
-  price: number;
-  city:
-    | 'Paris'
-    | 'Cologne'
-    | 'Brussels'
-    | 'Amsterdam'
-    | 'Hamburg'
-    | 'Dusseldorf';
-  location: string;
-  isFavorite: boolean;
-  isPremium: boolean;
-  rating: number;
-  description: string;
-  bedrooms: number;
-  goods: string[];
-  host: IHost;
-  images: string[];
-  maxAdults: number;
-}
+import { IFavorite } from '../types/favorites';
 
 export const favorites: IFavorite[] = [
   {
@@ -36,8 +6,19 @@ export const favorites: IFavorite[] = [
     title: 'Beautiful &amp; luxurious apartment at great location',
     type: 'Apartment',
     price: 120,
-    city: 'Paris',
-    location: 'location',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: true,
     isPremium: true,
     rating: 4,
@@ -78,8 +59,19 @@ export const favorites: IFavorite[] = [
     title: 'Wood and stone place',
     type: 'Room',
     price: 80,
-    city: 'Cologne',
-    location: 'location',
+    city: {
+      name: 'Cologne',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: false,
     isPremium: false,
     rating: 4,
@@ -120,8 +112,19 @@ export const favorites: IFavorite[] = [
     title: 'Canal View Prinsengracht',
     type: 'Apartment',
     price: 132,
-    city: 'Amsterdam',
-    location: 'location',
+    city: {
+      name: 'Brussels',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: true,
     isPremium: false,
     rating: 4,

@@ -8,9 +8,9 @@ import PrivateRoute from '../private-route/private-route';
 import Layout from '../layout/layout';
 import { AppRoute } from '../../const';
 import { getAuthorizationStatus } from '../../authorizationStatus';
-import { IOffer } from '../../mocks/offers';
-import { IReviews } from '../../mocks/reviews';
-import { IFavorite } from '../../mocks/favorites';
+import { IOffer } from '../../types/offers';
+import { IReviews } from '../../types/reviews';
+import { IFavorite } from '../../types/favorites';
 
 interface IAppProps {
   offerCount: number;
@@ -36,7 +36,7 @@ export const App = ({
             element={<MainPage offerCount={offerCount} offers={offers} />}
           />
           <Route
-            path={AppRoute.Offer}
+            path={`${AppRoute.Offer}/:id`}
             element={<OfferPage offers={offers} reviews={reviews} />}
           />
           <Route

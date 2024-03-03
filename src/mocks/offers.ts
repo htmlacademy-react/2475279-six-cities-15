@@ -1,49 +1,30 @@
-interface IHost {
-  name: string;
-  avatarUrl: string;
-  isPro: boolean;
-  comment: string;
-  rating: number;
-}
-
-export interface IOffer {
-  id: number;
-  title: string;
-  type: 'Apartment' | 'Room' | 'House' | 'Hotel';
-  price: number;
-  city:
-    | 'Paris'
-    | 'Cologne'
-    | 'Brussels'
-    | 'Amsterdam'
-    | 'Hamburg'
-    | 'Dusseldorf';
-  location: string;
-  isFavorite: boolean;
-  isPremium: boolean;
-  rating: number;
-  description: string;
-  bedrooms: number;
-  goods: string[];
-  host: IHost;
-  images: string[];
-  maxAdults: number;
-}
+import { IOffer } from '../types/offers';
 
 export const offers: IOffer[] = [
   {
-    id: 1,
+    id: '1',
     title: 'Beautiful &amp; luxurious apartment at great location',
     type: 'Apartment',
     price: 120,
-    city: 'Paris',
-    location: 'location',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: true,
     isPremium: true,
     rating: 4,
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 2,
+    bedrooms: 1,
     goods: [
       'Wi-fi',
       'Washing machine',
@@ -74,12 +55,23 @@ export const offers: IOffer[] = [
     maxAdults: 3,
   },
   {
-    id: 2,
+    id: '2',
     title: 'Wood and stone place',
     type: 'Room',
     price: 80,
-    city: 'Paris',
-    location: 'location',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: false,
     isPremium: false,
     rating: 4,
@@ -116,18 +108,29 @@ export const offers: IOffer[] = [
     maxAdults: 3,
   },
   {
-    id: 3,
+    id: '3',
     title: 'Canal View Prinsengracht',
     type: 'Apartment',
     price: 132,
-    city: 'Paris',
-    location: 'location',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: true,
     isPremium: false,
     rating: 4,
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 2,
+    bedrooms: 3,
     goods: [
       'Wi-fi',
       'Washing machine',
@@ -158,12 +161,23 @@ export const offers: IOffer[] = [
     maxAdults: 3,
   },
   {
-    id: 4,
+    id: '4',
     title: 'Nice, cozy, warm big bed apartment',
     type: 'Apartment',
     price: 180,
-    city: 'Paris',
-    location: 'location',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: true,
     isPremium: true,
     rating: 4,
@@ -200,18 +214,29 @@ export const offers: IOffer[] = [
     maxAdults: 3,
   },
   {
-    id: 5,
+    id: '5',
     title: 'Wood and stone place',
     type: 'Room',
     price: 80,
-    city: 'Paris',
-    location: 'location',
+    city: {
+      name: 'Paris',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 5,
+      },
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 5,
+    },
     isFavorite: false,
     isPremium: false,
     rating: 4,
     description:
       'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 2,
+    bedrooms: 4,
     goods: [
       'Wi-fi',
       'Washing machine',

@@ -1,4 +1,4 @@
-import { IOffer } from '../../../../mocks/offers';
+import { IOffer } from '../../../../types/offers';
 
 interface IOfferInfoProps {
   offers: IOffer[];

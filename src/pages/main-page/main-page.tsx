@@ -1,8 +1,8 @@
-import CardList from '../../components/card-list/card-list';
+import CardsList from '../../components/cards-list/cards-list';
 import Map from '../../components/map/map';
 import NavTabs from './components/nav-tabs/nav-tabs';
 import SortPlaces from './components/sort-places/sort-places';
-import { IOffer } from '../../mocks/offers';
+import { IOffer } from '../../types/offers';
 
 interface IMainPageProps {
   offerCount: number;
@@ -18,7 +18,7 @@ const MainPage = ({ offerCount, offers }: IMainPageProps): JSX.Element => (
       <div className="cities__places-container container">
         <section className="cities__places places">
           <SortPlaces offerCount={offerCount} />
-          <CardList className="cities" offers={offers} />
+          <CardsList className="cities" offers={offers} />
         </section>
 
         <div className="cities__right-section">

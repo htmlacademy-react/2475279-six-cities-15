@@ -1,14 +1,36 @@
-import { IOffer } from '../../mocks/offers';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
+import { IOffer } from '../../types/offers';
 
-interface ICardProps {
+interface ICardDetailsProps {
   className?: string;
-  offers: IOffer[];
+  offer: IOffer;
+  handleHoverCard: (offer?: IOffer) => void;
 }
 
-const CardList = ({ className, offers }: ICardProps): JSX.Element => (
-  <div className="cities__places-list places__list tabs__content">
-    {offers.map(({ id, isPremium, images, price, title, type }) => (
-      <article className={`${className}__card place-card`} key={id}>
+const CardDetails = ({
+  offer,
+  className,
+  handleHoverCard,
+}: ICardDetailsProps) => {
+  const { id, isPremium, images, price, title, type } = offer;
+
+  const handleMouseOn = () => {
+    handleHoverCard(offer);
+  };
+
+  const handleMouseOff = () => {
+    handleHoverCard();
+  };
+
+  return (
+    <article
+      className={`${className}__card place-card`}
+      key={id}
+      onMouseEnter={handleMouseOn}
+      onMouseLeave={handleMouseOff}
+    >
+      <Link to={`${AppRoute.Offer}/${offer.id}`}>
         {isPremium ? (
           <div className="place-card__mark">
             <span>Premium</span>
@@ -16,15 +38,13 @@ const CardList = ({ className, offers }: ICardProps): JSX.Element => (
         ) : null}
 
         <div className="cities__image-wrapper place-card__image-wrapper">
-          <a href="#">
-            <img
-              className="place-card__image"
-              src={images[0]}
-              width="260"
-              height="200"
-              alt="Place image"
-            />
-          </a>
+          <img
+            className="place-card__image"
+            src={images[0]}
+            width="260"
+            height="200"
+            alt="Place image"
+          />
         </div>
 
         <div className="place-card__info">
@@ -51,15 +71,13 @@ const CardList = ({ className, offers }: ICardProps): JSX.Element => (
             </div>
           </div>
 
-          <h2 className="place-card__name">
-            <a href="#">{title}</a>
-          </h2>
+          <h2 className="place-card__name">{title}</h2>
 
           <p className="place-card__type">{type}</p>
         </div>
-      </article>
-    ))}
-  </div>
-);
+      </Link>
+    </article>
+  );
+};
 
-export default CardList;
+export default CardDetails;

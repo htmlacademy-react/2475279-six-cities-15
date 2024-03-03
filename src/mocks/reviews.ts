@@ -1,11 +1,4 @@
-export interface IReviews {
-  id: number;
-  avatarUrl: string;
-  name: string;
-  rating: number;
-  comment: string;
-  date: string;
-}
+import { IReviews } from '../types/reviews';
 
 export const reviews: IReviews[] = [
   {
