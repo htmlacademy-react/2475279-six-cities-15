@@ -1,21 +1,18 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { STARS } from './data';
+import { RatingNames } from '../../../../const';
+import InputItem from './input-item';
 
 const OfferForm = () => {
-  const [item, setItem] = useState({
+  const [formData, setFormData] = useState({
+    rating: 0,
     review: '',
   });
 
-  const [star, setStar] = useState('');
-
-  const handleChangeReview = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setItem({ ...item, [e.target.name]: e.target.value });
-  };
-
-  const handleChangeStar = (e: ChangeEvent<HTMLInputElement>) => {
-    setStar(e.target.value);
-
-    return star; //deleted eslint's error
+  const handleChangeData = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const { value, name } = e.currentTarget;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -29,34 +26,23 @@ const OfferForm = () => {
       </label>
 
       <div className="reviews__rating-form form__rating">
-        {STARS.map(({ name, value, id }) => (
-          <div key={id}>
-            <input
-              className="form__rating-input visually-hidden"
-              name={name}
-              value={value}
-              id={id}
-              type="radio"
-              onChange={handleChangeStar}
+        {Object.entries(RatingNames)
+          .map(([rate, title]) => (
+            <InputItem
+              value={rate}
+              title={title}
+              key={title}
+              handleChangeData={handleChangeData}
             />
-            <label
-              htmlFor={id}
-              className="reviews__rating-label form__rating-label"
-              title="perfect"
-            >
-              <svg className="form__star-image" width="37" height="33">
-                <use xlinkHref="#icon-star"></use>
-              </svg>
-            </label>
-          </div>
-        ))}
+          ))
+          .reverse()}
       </div>
 
       <textarea
         className="reviews__textarea form__textarea"
         id="review"
-        value={item.review}
-        onChange={handleChangeReview}
+        value={formData.review}
+        onChange={handleChangeData}
         name="review"
         placeholder="Tell how was your stay, what you like and what can be improved"
       />
@@ -67,7 +53,11 @@ const OfferForm = () => {
           <span className="reviews__star">rating</span> and describe your stay
           with at least <b className="reviews__text-amount">50 characters</b>.
         </p>
-        <button className="reviews__submit form__submit button" type="submit">
+        <button
+          className="reviews__submit form__submit button"
+          type="submit"
+          disabled={formData.rating === 0 || formData.review.length < 50}
+        >
           Submit
         </button>
       </div>
