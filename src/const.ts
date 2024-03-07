@@ -18,11 +18,19 @@ export const OPTIONS: string[] = [
   'Top rated first',
 ];
 
+export const RatingNames: { [index: string]: string } = {
+  '1': 'terribly',
+  '2': 'badly',
+  '3': 'not bad',
+  '4': 'good',
+  '5': 'perfect',
+};
+
 export enum AppRoute {
   Root = '/',
   Login = '/login',
   Favorites = '/favorites',
-  Offer = '/offer/:id',
+  Offer = '/offer/:eventId',
 }
 
 export enum AuthorizationStatus {
